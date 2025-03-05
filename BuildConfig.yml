@@ -13,7 +13,7 @@ spec:
     dockerStrategy:
       from:
         kind: DockerImage
-        name: python:3.9-slim
+        name: python:3.12
       env:
         - name: GIT_SSH_COMMAND
           value: "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" 
