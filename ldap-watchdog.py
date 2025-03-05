@@ -45,6 +45,7 @@ SLACK_WEBHOOK = os.getenv('SLACK_WEBHOOK_URL', '')
 # The API endpoint to call when a new user is created
 API_ENDPOINT = os.getenv('API_ENDPOINT')
 TOKEN = os.getenv('TOKEN')
+TOKEN = TOKEN.replace("\n", "")
 
 if SLACK_WEBHOOK and len(SLACK_WEBHOOK) > 0:
     import requests
