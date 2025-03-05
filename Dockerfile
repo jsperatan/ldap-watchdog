@@ -12,7 +12,7 @@ COPY . /app
 RUN pip install --no-cache-dir ldap3 requests
 
 # Make the script executable (optional)
-RUN chmod +x ldap-watchdog.py
+RUN chmod 777 ldap-watchdog.py
 
 # Run the Python script when the container starts
 CMD ["python", "ldap-watchdog.py"]
