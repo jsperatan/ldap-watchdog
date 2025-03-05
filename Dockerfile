@@ -1,5 +1,5 @@
 # Use an official Python runtime as the base image
-FROM python:3.12
+FROM python:3.12-slim
 RUN apt-get update && apt-get install -y vim && apt-get clean
 
 # Set the working directory inside the container
@@ -12,7 +12,7 @@ COPY . /app
 RUN pip install --no-cache-dir ldap3 requests
 
 # Make the script executable (optional)
-RUN chmod 777 ldap-watchdog.py
+RUN chmod +x ldap-watchdog.py
 
 # Run the Python script when the container starts
 CMD ["python", "ldap-watchdog.py"]
