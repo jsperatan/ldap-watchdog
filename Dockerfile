@@ -1,5 +1,6 @@
 # Use an official Python runtime as the base image
 FROM python:3.12
+RUN apt-get update && apt-get install -y vim && apt-get clean
 
 # Set the working directory inside the container
 WORKDIR /app
