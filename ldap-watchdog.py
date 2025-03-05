@@ -22,6 +22,7 @@ LDAP_SERVER =  'ldap://172.30.173.208:389'
 LDAP_USERNAME = 'cn=admin,dc=example,dc=org'
 # LDAP_USERNAME = os.getenv('LDAP_USERNAME')
 LDAP_PASSWORD = os.getenv('LDAP_PASSWORD')
+LDAP_PASSWORD = LDAP_PASSWORD.replace("\n", "")
 LDAP_USE_SSL = False
 BASE_DN = 'dc=example,dc=org'
 
