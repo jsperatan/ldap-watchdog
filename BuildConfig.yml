@@ -1,0 +1,26 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: ldap-watchdog-build
+  namespace: cp4ba-starter
+spec:
+  source:
+    git:
+      uri: "git@github.ibm.com:Jasper-Jian-Ming-Tan/ldap-watchdog.git" 
+      ref: main
+      secret:
+        name: github-access
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: DockerImage
+        name: python:3.9-slim
+      env:
+        - name: GIT_SSH_COMMAND
+          value: "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" 
+  output:
+    to:
+      kind: ImageStreamTag
+      name: "ldap-watchdog:latest"
+
