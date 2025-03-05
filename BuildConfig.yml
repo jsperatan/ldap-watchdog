@@ -6,10 +6,8 @@ metadata:
 spec:
   source:
     git:
-      uri: "git@github.ibm.com:Jasper-Jian-Ming-Tan/ldap-watchdog.git" 
+      uri: "https://github.com/jsperatan/ldap-watchdog.git" 
       ref: main
-      secret:
-        name: github-access
   strategy:
     type: Docker
     dockerStrategy:
