@@ -20,6 +20,8 @@ CONTROL_USER_ATTRIBUTE = ''
 LDAP_SERVER = os.getenv('LDAP_SERVER')
 LDAP_USERNAME = os.getenv('LDAP_USERNAME')
 LDAP_PASSWORD = os.getenv('LDAP_PASSWORD')
+LDAP_USERNAME = LDAP_USERNAME.encode('utf-8')
+LDAP_PASSWORD = LDAP_PASSWORD.encode('utf-8')
 LDAP_USE_SSL = False
 BASE_DN = 'dc=example,dc=org'
 
@@ -42,6 +44,8 @@ SLACK_WEBHOOK = os.getenv('SLACK_WEBHOOK_URL', '')
 # The API endpoint to call when a new user is created
 API_ENDPOINT = os.getenv('API_ENDPOINT')
 TOKEN = os.getenv('TOKEN')
+API_ENDPOINT = API_ENDPOINT.encode('utf-8')
+TOKEN = TOKEN.encode('utf-8')
 
 if SLACK_WEBHOOK and len(SLACK_WEBHOOK) > 0:
     import requests
